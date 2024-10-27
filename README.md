@@ -45,20 +45,23 @@ Welcome to **Dhanda Management** – a comprehensive inventory management platfo
 
 ## 📸 Screenshots
 
-### 1️⃣. 1️⃣ Dashboard
+### 1️⃣.1️⃣ Dashboard 
 ![Dashboard](./images/1a.png)
 
-### 2️ Inventory Overview
+### 1️⃣.2️⃣ Dashboard
 ![Inventory](./images/1b.png)
 
-### 2️⃣3️⃣ Add New Item
+### 2️⃣ Inventory
 ![Add Item](./images/2.png)
 
-### 3️⃣4️⃣ Add New Item
+### 3️⃣ Add New Item
 ![Forecast](./images/3.png)
 
-### 5️⃣ Demand Forecast
+### 4️⃣.1️⃣ Demand Forecast
 ![Sales Analytics](./images/4a.png)
+
+### 4️⃣.2️⃣ Demand Forecast Analysis
+![Sales Analytics](./images/4b.png)
 
 ---
 
