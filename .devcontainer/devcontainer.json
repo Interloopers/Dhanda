@@ -1,0 +1,63 @@
+{
+  "name": "Python 3",
+  // Base image for the DevContainer with Python 3.11
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md",  // Default files to open in Codespaces
+        "streamlit_app.py"
+      ]
+    },
+    "vscode": {
+      "settings": {
+      // Add any VSCode specific settings here, for example:
+      // "python.autoComplete.extraPaths": ["./src"]
+      },
+      "extensions": [
+        "ms-python.python",       // Python extension for VSCode
+        "ms-python.vscode-pylance" // Pylance for Python language support
+      ]
+    }
+  },
+
+  "updateContentCommand": [
+    // Update package lists and install system packages if packages.txt exists
+    "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt;",
+    
+    // Install Python dependencies if requirements.txt exists
+    "[ -f requirements.txt ] && pip install --user -r requirements.txt;",
+    
+    // Ensure Streamlit is installed
+    "pip install --user streamlit;",
+    
+    // Confirmation message after installation
+    "echo '✅ Packages installed and Requirements met'"
+  ],
+
+  "postAttachCommand": {
+    // Start the Streamlit app with necessary configurations
+    "server": "streamlit run streamlit_app.py --server.enableCORS false --server.enableXsrfProtection false"
+  },
+
+  "portsAttributes": {
+    "8501": {
+      "label": "Application",  // Label for the forwarded port
+      "onAutoForward": "openPreview"  // Automatically open a preview when the port is forwarded
+    }
+  },
+
+  "forwardPorts": [
+    8501  // Port for the Streamlit application
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "client/gpcWindowSetting.js" // Ensure the required resource is listed here
+      ],
+      "matches": ["<all_urls>"]  // Specify the URLs that can access these resources
+    }
+  ]
+}
