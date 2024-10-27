@@ -71,8 +71,16 @@ Welcome to **Dhanda Management** – a comprehensive inventory management platfo
   
 ---
 
-## 🛠️ Installation
-
-1. **Clone the repository:**  
+## 🕹️ **Installation**  
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/Interloopers/Dhanda-Management.git
+   git clone https://github.com/Interloopers/Training-Arc.git
+
+2. Install the dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+3. Run the Project:
+   ```bash
+   streamlit run app.py
+
